@@ -1774,9 +1774,7 @@ FUNCTION {begin.bib}
   write$ newline$
   "\ifx\undefined\BibUrl\def\BibUrl#1{\urlprefix\url{#1}}\else\fi"
   write$ newline$
-  "\ifx\undefined\BibUrlDate\long\def\BibUrlDate#1{({%"
-  write$ newline$
-  "дата обращения: #1)}\else\fi"
+  "\ifx\undefined\BibUrlDate\long\def\BibUrlDate#1{(дата обращения: #1)}\else\fi"
   write$ newline$
   "\ifx\undefined\BibAnnote\long\def\BibAnnote#1{#1}\else\fi"
   write$ newline$
