@@ -701,12 +701,12 @@ FUNCTION {format.names}
         nameptr #1 >
           { nameptr #4 =
             numnames #4 > and
-              { "others" 't := #1 'namesleft := }
+              { "и др." 't := #1 'namesleft := }
               'skip$
             if$
             namesleft #1 >
               { ", " * t * }
-              { t "others" = t "~others" = or
+              { t "и др." = t "~и др." = or
                   { " " * bbl.etal * }
                   { ", " * t * }
                 if$
@@ -795,12 +795,12 @@ FUNCTION {format.names.rev}
         nameptr #1 >
           { nameptr #4 =
             numnames #4 > and
-              { "others" 't := #1 'namesleft := }
+              { "и др." 't := #1 'namesleft := }
               'skip$
             if$
             namesleft #1 >
               { ", " * t * }
-              { t "others" = t "~others" = or
+              { t "и др." = t "~и др." = or
                   { " " * bbl.etal * }
                   { ", " * t * }
                 if$
