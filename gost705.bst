@@ -1313,7 +1313,11 @@ FUNCTION {add.doi}
     'skip$
     { doi empty$
         'skip$
-        { "\href{http://dx.doi.org/" doi * "}{" * swap$ * "}" * }
+        { swap$
+          add.period$
+          " https://doi.org/" doi *
+          *
+        }
       if$
     }
   if$
