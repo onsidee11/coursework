@@ -1350,7 +1350,7 @@ FUNCTION {article}
   author.before
   format.title "title" output.check
   new.dblslash
-  journal emphasize add.doi "journal" output.check
+  journal emphasize "journal" output.check
   new.block
   format.date output
   new.block
@@ -1360,6 +1360,7 @@ FUNCTION {article}
   format.pages.page output
   new.block
   note output
+  add.doi
   new.sentence
   % format.eprint output
   new.block
@@ -1372,7 +1373,7 @@ FUNCTION {book}
 {
   output.bibitem
   author.before
-  format.btitle add.doi "title" output.check
+  format.btitle "title" output.check
   new.slash
   editor.organization.after
   new.sentence
@@ -1385,6 +1386,7 @@ FUNCTION {book}
   format.bvolume output
   new.block
   format.pages.page output
+  add.doi
   new.block
   % format.isbn output
   new.block
@@ -1421,7 +1423,7 @@ FUNCTION {inbook}
 {
   output.bibitem
   author.before
-  format.btitle add.doi "title" output.check
+  format.btitle "title" output.check
   new.dblslash
   bookauthor.before
   booktitle "booktitle" output.check
@@ -1436,6 +1438,7 @@ FUNCTION {inbook}
   format.bvolume output
   new.block
   format.pages.page output
+  add.doi
   new.block
   % format.isbn output
   new.block
@@ -1453,7 +1456,7 @@ FUNCTION {incollection}
   output.bibitem
   author.before
   new.sentence
-  format.title add.doi "title" output.check
+  format.title "title" output.check
   new.dblslash
   booktitle "booktitle" output.check
   new.slash
@@ -1467,6 +1470,7 @@ FUNCTION {incollection}
   format.pages.page output
   new.block
   note output
+  add.doi
   new.block
   % format.eprint output
   new.block
@@ -1480,7 +1484,7 @@ FUNCTION {inproceedings}
   output.bibitem
   author.before
   new.sentence
-  format.title add.doi "title" output.check
+  format.title "title" output.check
   new.dblslash
   booktitle "booktitle" output.check
   new.slash
@@ -1503,6 +1507,7 @@ FUNCTION {inproceedings}
   format.pages.page output
   new.block
   note output
+  add.doi
   new.sentence
   % format.eprint output
   new.block
@@ -1558,7 +1563,7 @@ FUNCTION {mastersthesis}
   output.bibitem
   format.authors "author" output.check
   new.block
-  format.btitle add.doi "title" output.check
+  format.btitle "title" output.check
   new.block
   bbl.mthesis format.thesis.type output.nonnull
   school "school" output.check
@@ -1566,6 +1571,7 @@ FUNCTION {mastersthesis}
   format.date "year" output.check
   new.block
   note output
+  add.doi
   new.block
   % format.eprint output
   new.block
@@ -1599,7 +1605,7 @@ FUNCTION {phdthesis}
   output.bibitem
   format.authors "author" output.check
   new.sentence
-  format.btitle add.doi "title" output.check
+  format.btitle "title" output.check
   new.column
   bbl.phdthesis format.thesis.type output.nonnull
   new.slash
@@ -1609,6 +1615,7 @@ FUNCTION {phdthesis}
   new.block
   format.pages.page output
   note output
+  add.doi
   new.sentence
   % format.eprint output
   new.block
@@ -1622,7 +1629,7 @@ FUNCTION {docdisser}
   output.bibitem
   format.authors "author" output.check
   new.sentence
-  format.btitle add.doi "title" output.check
+  format.btitle "title" output.check
   new.column
   bbl.docdisser format.thesis.type output.nonnull
   new.slash
@@ -1632,6 +1639,7 @@ FUNCTION {docdisser}
   new.block
   format.pages.page output
   note output
+  add.doi
   new.sentence
   % format.eprint output
   new.block
@@ -1643,7 +1651,7 @@ FUNCTION {docdisser}
 FUNCTION {proceedings}
 {
   output.bibitem
-  format.btitle add.doi "title" output.check
+  format.btitle "title" output.check
   new.slash
   editor.organization.after
   new.block
@@ -1661,6 +1669,7 @@ FUNCTION {proceedings}
   if$
   new.block
   note output
+  add.doi
   new.sentence
   % format.eprint output
   new.block
@@ -1674,7 +1683,7 @@ FUNCTION {techreport}
   output.bibitem
   author.before
   new.sentence
-  format.title add.doi "title" output.check
+  format.title "title" output.check
   new.column
   format.tr.number output.nonnull
   editor.organization.after
@@ -1685,6 +1694,7 @@ FUNCTION {techreport}
   format.date "year" output.check
   new.block
   note output
+  add.doi
   new.sentence
   % format.eprint output
   new.block
