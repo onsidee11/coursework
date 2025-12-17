@@ -1315,7 +1315,7 @@ FUNCTION {add.doi}
         'skip$
         { swap$
           add.period$
-          " https://doi.org/" doi *
+          " \mbox{https://doi.org/" doi * "}" *
           *
         }
       if$
