@@ -1361,9 +1361,9 @@ FUNCTION {article}
   new.block
   note output
   new.sentence
-  format.eprint output
+  % format.eprint output
   new.block
-  output.url
+  % output.url
   format.annote output
   fin.entry
 }
@@ -1386,13 +1386,13 @@ FUNCTION {book}
   new.block
   format.pages.page output
   new.block
-  format.isbn output
+  % format.isbn output
   new.block
   note output
   new.sentence
-  format.eprint output
+  % format.eprint output
   new.block
-  output.url
+  % output.url
   format.annote output
   fin.entry
 }
@@ -1410,9 +1410,9 @@ FUNCTION {booklet}
   new.block
   note output
   new.sentence
-  format.eprint output
+  % format.eprint output
   new.block
-  output.url
+  % output.url
   format.annote output
   fin.entry
 }
@@ -1437,13 +1437,13 @@ FUNCTION {inbook}
   new.block
   format.pages.page output
   new.block
-  format.isbn output
+  % format.isbn output
   new.block
   note output
   new.sentence
-  format.eprint output
+  % format.eprint output
   new.block
-  output.url
+  % output.url
   format.annote output
   fin.entry
 }
@@ -1468,9 +1468,9 @@ FUNCTION {incollection}
   new.block
   note output
   new.block
-  format.eprint output
+  % format.eprint output
   new.block
-  output.url
+  % output.url
   format.annote output
   fin.entry
 }
@@ -1504,9 +1504,9 @@ FUNCTION {inproceedings}
   new.block
   note output
   new.sentence
-  format.eprint output
+  % format.eprint output
   new.block
-  output.url
+  % output.url
   format.annote output
   fin.entry
 }
@@ -1546,9 +1546,9 @@ FUNCTION {manual}
   new.block
   note output
   new.sentence
-  format.eprint output
+  % format.eprint output
   new.block
-  output.url
+  % output.url
   format.annote output
   fin.entry
 }
@@ -1567,9 +1567,9 @@ FUNCTION {mastersthesis}
   new.block
   note output
   new.block
-  format.eprint output
+  % format.eprint output
   new.block
-  output.url
+  % output.url
   format.annote output
   fin.entry
 }
@@ -1587,9 +1587,9 @@ FUNCTION {misc}
   new.block
   note output
   new.sentence
-  format.eprint output
+  % format.eprint output
   new.block
-  output.url
+  % output.url
   format.annote output
   fin.entry
 }
@@ -1610,9 +1610,9 @@ FUNCTION {phdthesis}
   format.pages.page output
   note output
   new.sentence
-  format.eprint output
+  % format.eprint output
   new.block
-  output.url
+  % output.url
   format.annote output
   fin.entry
 }
@@ -1633,9 +1633,9 @@ FUNCTION {docdisser}
   format.pages.page output
   note output
   new.sentence
-  format.eprint output
+  % format.eprint output
   new.block
-  output.url
+  % output.url
   format.annote output
   fin.entry
 }
@@ -1662,9 +1662,9 @@ FUNCTION {proceedings}
   new.block
   note output
   new.sentence
-  format.eprint output
+  % format.eprint output
   new.block
-  output.url
+  % output.url
   format.annote output
   fin.entry
 }
@@ -1686,9 +1686,9 @@ FUNCTION {techreport}
   new.block
   note output
   new.sentence
-  format.eprint output
+  % format.eprint output
   new.block
-  output.url
+  % output.url
   format.annote output
   fin.entry
 }
@@ -1702,9 +1702,9 @@ FUNCTION {unpublished}
   new.block
   note "note" output.check
   new.sentence
-  format.eprint output
+  % format.eprint output
   new.block
-  output.url
+  % output.url
   format.annote output
   fin.entry
 }
