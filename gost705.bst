@@ -653,7 +653,7 @@ FUNCTION {bbl.docdisser}
 
 INTEGERS { nameptr namesleft numnames }
 
-FUNCTION {format.names}
+FUNCTION {oldformat.names}
 {
   's :=
   #1 'nameptr :=
@@ -688,7 +688,66 @@ FUNCTION {format.names}
   while$
 }
 
-FUNCTION {format.names.rev}
+FUNCTION {format.names}
+{
+  's :=
+  #1 'nameptr :=
+  s num.names$ 'numnames :=
+  numnames 'namesleft :=
+  language empty$ { "english" 'curlanguage := } { language 'curlanguage := } if$
+  curlanguage "russian" =
+    { { namesleft #0 > }
+      { s nameptr "{vv~}{ll}{~ff}{, jj}" format.name$ 't :=
+        nameptr #1 >
+          { nameptr #4 =
+            numnames #4 > and
+              { "others" 't := #1 'namesleft := }
+              'skip$
+            if$
+            namesleft #1 >
+              { ", " * t * }
+              { t "others" = t "~others" = or
+                  { " " * bbl.etal * }
+                  { ", " * t * }
+                if$
+              }
+            if$
+          }
+          't
+        if$
+        nameptr #1 + 'nameptr :=
+        namesleft #1 - 'namesleft :=
+      }
+      while$
+    }
+    { { namesleft #0 > }
+      { s nameptr "{vv~}{ll}{~f.}{, jj}" format.name$ 't :=
+        nameptr #1 >
+          { nameptr #4 =
+            numnames #4 > and
+              { "others" 't := #1 'namesleft := }
+              'skip$
+            if$
+            namesleft #1 >
+              { ", " * t * }
+              { t "others" = t "~others" = or
+                  { " " * bbl.etal * }
+                  { ", " * t * }
+                if$
+              }
+            if$
+          }
+          't
+        if$
+        nameptr #1 + 'nameptr :=
+        namesleft #1 - 'namesleft :=
+      }
+      while$
+    }
+  if$
+}
+
+FUNCTION {oldformat.names.rev}
 {
   's :=
   #1 'nameptr :=
@@ -721,6 +780,65 @@ FUNCTION {format.names.rev}
       namesleft #1 - 'namesleft :=
     }
   while$
+}
+
+FUNCTION {format.names.rev}
+{
+  's :=
+  #1 'nameptr :=
+  s num.names$ 'numnames :=
+  numnames 'namesleft :=
+  language empty$ { "english" 'curlanguage := } { language 'curlanguage := } if$
+  curlanguage "russian" =
+    { { namesleft #0 > }
+      { s nameptr "{ff }{~vv}{~ll}{, jj}" format.name$ 't :=
+        nameptr #1 >
+          { nameptr #4 =
+            numnames #4 > and
+              { "others" 't := #1 'namesleft := }
+              'skip$
+            if$
+            namesleft #1 >
+              { ", " * t * }
+              { t "others" = t "~others" = or
+                  { " " * bbl.etal * }
+                  { ", " * t * }
+                if$
+              }
+            if$
+          }
+          't
+        if$
+        nameptr #1 + 'nameptr :=
+        namesleft #1 - 'namesleft :=
+      }
+      while$
+    }
+    { { namesleft #0 > }
+      { s nameptr "{f.}{~vv}{~ll}{, jj}" format.name$ 't :=
+        nameptr #1 >
+          { nameptr #4 =
+            numnames #4 > and
+              { "others" 't := #1 'namesleft := }
+              'skip$
+            if$
+            namesleft #1 >
+              { ", " * t * }
+              { t "others" = t "~others" = or
+                  { " " * bbl.etal * }
+                  { ", " * t * }
+                if$
+              }
+            if$
+          }
+          't
+        if$
+        nameptr #1 + 'nameptr :=
+        namesleft #1 - 'namesleft :=
+      }
+      while$
+    }
+  if$
 }
 
 FUNCTION {format.authors}
