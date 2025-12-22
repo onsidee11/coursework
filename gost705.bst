@@ -139,13 +139,6 @@ FUNCTION {output.check}
   if$
 }
 
-FUNCTION {fin.entry}
-{
-  add.period$
-  write$
-  newline$
-}
-
 FUNCTION {new.block}
 {
   output.state before.all =
@@ -1309,18 +1302,27 @@ FUNCTION {format.isbn}
 }
 
 FUNCTION {add.doi}
-{ duplicate$ empty$
-    'skip$
-    { doi empty$
-        'skip$
-        { swap$
-          add.period$
-          " \mbox{https://doi.org/" doi * "}" *
-          *
-        }
-      if$
+{ doi empty$
+    { "" }
+    { " \mbox{https://doi.org/" doi * "}" * }
+  if$
+}
+
+FUNCTION {fin.entry}
+{
+  add.doi
+  duplicate$ empty$
+    { pop$
+      add.period$
+    }
+    { swap$
+      add.period$
+      swap$
+      *
     }
   if$
+  write$
+  newline$
 }
 
 FUNCTION {format.eprint}
@@ -1360,7 +1362,6 @@ FUNCTION {article}
   format.pages.page output
   new.block
   note output
-  add.doi
   new.sentence
   % format.eprint output
   new.block
@@ -1386,7 +1387,6 @@ FUNCTION {book}
   format.bvolume output
   new.block
   format.pages.page output
-  add.doi
   new.block
   % format.isbn output
   new.block
@@ -1438,7 +1438,6 @@ FUNCTION {inbook}
   format.bvolume output
   new.block
   format.pages.page output
-  add.doi
   new.block
   % format.isbn output
   new.block
@@ -1470,7 +1469,6 @@ FUNCTION {incollection}
   format.pages.page output
   new.block
   note output
-  add.doi
   new.block
   % format.eprint output
   new.block
@@ -1507,7 +1505,6 @@ FUNCTION {inproceedings}
   format.pages.page output
   new.block
   note output
-  add.doi
   new.sentence
   % format.eprint output
   new.block
@@ -1571,7 +1568,6 @@ FUNCTION {mastersthesis}
   format.date "year" output.check
   new.block
   note output
-  add.doi
   new.block
   % format.eprint output
   new.block
@@ -1615,7 +1611,6 @@ FUNCTION {phdthesis}
   new.block
   format.pages.page output
   note output
-  add.doi
   new.sentence
   % format.eprint output
   new.block
@@ -1639,7 +1634,6 @@ FUNCTION {docdisser}
   new.block
   format.pages.page output
   note output
-  add.doi
   new.sentence
   % format.eprint output
   new.block
@@ -1669,7 +1663,6 @@ FUNCTION {proceedings}
   if$
   new.block
   note output
-  add.doi
   new.sentence
   % format.eprint output
   new.block
@@ -1694,7 +1687,6 @@ FUNCTION {techreport}
   format.date "year" output.check
   new.block
   note output
-  add.doi
   new.sentence
   % format.eprint output
   new.block
