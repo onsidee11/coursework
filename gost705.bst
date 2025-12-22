@@ -995,7 +995,7 @@ FUNCTION {format.bvolume}
     { bbl.vvol volume tie.connect
       series empty$
         'skip$
-        { bbl.of space.word * series emphasize * }
+        { bbl.of space.word * series * }
       if$
       "volume and number" number either.or.check
     }
@@ -1352,7 +1352,7 @@ FUNCTION {article}
   author.before
   format.title "title" output.check
   new.dblslash
-  journal emphasize "journal" output.check
+  journal "journal" output.check
   new.block
   format.date output
   new.block
