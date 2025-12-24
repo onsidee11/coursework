@@ -784,7 +784,7 @@ FUNCTION {format.names.rev}
   language empty$ { "english" 'curlanguage := } { language 'curlanguage := } if$
   curlanguage "russian" =
     { { namesleft #0 > }
-      { s nameptr "{ff }{~vv}{~ll}{, jj}" format.name$ 't :=
+      { s nameptr "{ff}{~vv}{~ll}{, jj}" format.name$ 't :=
         nameptr #1 >
           { nameptr #4 =
             numnames #4 > and
